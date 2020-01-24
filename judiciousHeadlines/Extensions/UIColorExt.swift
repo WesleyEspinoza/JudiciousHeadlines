@@ -1,0 +1,23 @@
+//
+//  UIColorExt.swift
+//  judiciousHeadlines
+//
+//  Created by Wesley Espinoza on 1/24/20.
+//  Copyright © 2020 Erick Espinoza. All rights reserved.
+//
+import Foundation
+import UIKit
+
+extension UIColor {
+    
+    // NOTE: UIColor(hex: 0xE3E3E3) -> UIColor Desc: The function Takes in an Int (Replace # with 0x) ex. #FF5733 -> 0xFF5733 turns the hex value into an Int
+    convenience init(hex: Int) {
+        let components = (
+            R: CGFloat((hex >> 16) & 0xff) / 255,
+            G: CGFloat((hex >> 08) & 0xff) / 255,
+            B: CGFloat((hex >> 00) & 0xff) / 255
+        )
+        self.init(red: components.R, green: components.G, blue: components.B, alpha: 1)
+    }
+
+}
