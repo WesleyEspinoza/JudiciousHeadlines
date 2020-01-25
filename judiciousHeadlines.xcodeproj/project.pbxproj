@@ -25,6 +25,7 @@
 		2B9F7EC923DC2D9C000F842E /* Headlines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9F7EC823DC2D9C000F842E /* Headlines.swift */; };
 		2B9F7ECB23DC2E52000F842E /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9F7ECA23DC2E52000F842E /* Source.swift */; };
 		2B9F7ECE23DC2F49000F842E /* NewsAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9F7ECD23DC2F49000F842E /* NewsAPIService.swift */; };
+		2B9F7ED223DC33F4000F842E /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9F7ED123DC33F4000F842E /* Secret.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		2B9F7EC823DC2D9C000F842E /* Headlines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Headlines.swift; sourceTree = "<group>"; };
 		2B9F7ECA23DC2E52000F842E /* Source.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
 		2B9F7ECD23DC2F49000F842E /* NewsAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPIService.swift; sourceTree = "<group>"; };
+		2B9F7ED123DC33F4000F842E /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 			children = (
 				2B9F7EC823DC2D9C000F842E /* Headlines.swift */,
 				2B9F7ECA23DC2E52000F842E /* Source.swift */,
+				2B9F7ED123DC33F4000F842E /* Secret.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				2B4181B823D8FB220056F40C /* SceneDelegate.swift in Sources */,
 				2B9F7ECB23DC2E52000F842E /* Source.swift in Sources */,
 				2B4181C023D8FB220056F40C /* judiciousHeadlines.xcdatamodeld in Sources */,
+				2B9F7ED223DC33F4000F842E /* Secret.swift in Sources */,
 				2B4181E123DB6F020056F40C /* FeaturedCollectionViewCell.swift in Sources */,
 				2B9F7EC623DBB0AF000F842E /* CategoryCollectionViewCellCell.swift in Sources */,
 			);
