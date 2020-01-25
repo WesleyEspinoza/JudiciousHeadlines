@@ -15,6 +15,21 @@ class ForYouCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = UIColor(hex: 0xF31E57)
+        setupHeader()
+    }
+    
+    func setupHeader() {
+        let header = UILabel()
+        header.translatesAutoresizingMaskIntoConstraints = false
+        header.font = UIFont(name: "Optima-ExtraBlack", size: 35)
+        header.text = "For You!"
+        self.addSubview(header)
+        
+        NSLayoutConstraint.activate([
+            header.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 8),
+            header.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 8)
+            
+        ])
         
     }
     

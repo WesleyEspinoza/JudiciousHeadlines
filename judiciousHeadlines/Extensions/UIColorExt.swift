@@ -19,5 +19,9 @@ extension UIColor {
         )
         self.init(red: components.R, green: components.G, blue: components.B, alpha: 1)
     }
+    
+    static func random(alpha: CGFloat) -> UIColor{
+        return UIColor(red: .random(in: 55...255) / 255, green: .random(in: 55...255) / 255, blue: .random(in: 55...255) / 255, alpha: alpha)
+    }
 
 }

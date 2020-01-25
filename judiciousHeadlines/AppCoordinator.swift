@@ -10,13 +10,25 @@ import Foundation
 import UIKit
 
 class AppCoordinator: Coordinator{
+    let userdefaults = UserDefaults.standard
     func start() {
-        let vc = NewsFeedViewController()
-        vc.coordinator = self
-        let navController = UINavigationController(rootViewController: vc)
-        navController.isNavigationBarHidden = false
         
-        window.rootViewController = navController
+        if (userdefaults.bool(forKey: "HasLaunchedBefore")){
+            let vc = NewsFeedViewController()
+            vc.coordinator = self
+            let navController = UINavigationController(rootViewController: vc)
+            navController.isNavigationBarHidden = false
+            
+            window.rootViewController = navController
+        } else {
+            let vc = CategorySelectionController()
+            vc.coordinator = self
+            let navController = UINavigationController(rootViewController: vc)
+            navController.isNavigationBarHidden = false
+            
+            window.rootViewController = navController
+        }
+
         
     }
     

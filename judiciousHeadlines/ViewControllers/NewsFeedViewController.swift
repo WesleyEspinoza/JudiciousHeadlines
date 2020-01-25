@@ -20,6 +20,9 @@ class NewsFeedViewController: UIViewController{
     }
     
     func setupViews(){
+        let editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editButtonPressed))
+        self.navigationItem.rightBarButtonItems = [editButton]
+        
         let flowLayout = UICollectionViewFlowLayout()
         headlinesCollectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: flowLayout)
         headlinesCollectionView.backgroundColor = UIColor(hex: 0xEFEFEF)
@@ -29,6 +32,10 @@ class NewsFeedViewController: UIViewController{
         headlinesCollectionView.delegate = self
         headlinesCollectionView.dataSource = self
         self.view.addSubview(headlinesCollectionView)
+    }
+    
+    @objc func editButtonPressed(){
+        
     }
 }
 
