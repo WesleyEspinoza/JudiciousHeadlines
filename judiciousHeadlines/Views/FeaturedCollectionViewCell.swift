@@ -43,7 +43,7 @@ class FeaturedCollectionViewCell: UICollectionViewCell{
         headlinesCollectionView.register(CategoryCollectionViewCell.self, forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier)
         headlinesCollectionView.delegate = self
         headlinesCollectionView.dataSource = self
-        self.view.addSubview(headlinesCollectionView)
+        self.addSubview(headlinesCollectionView)
     }
     
     required init?(coder: NSCoder) {
