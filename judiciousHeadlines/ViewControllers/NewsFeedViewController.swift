@@ -11,7 +11,7 @@ import UIKit
 class NewsFeedViewController: UIViewController{
     var coordinator: Coordinator!
     var headlinesCollectionView: UICollectionView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -21,8 +21,7 @@ class NewsFeedViewController: UIViewController{
     
     func setupViews(){
         let editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editButtonPressed))
-        self.navigationItem.rightBarButtonItems = [editButton]
-        
+        self.navigationItem.leftBarButtonItems = [editButton]
         let flowLayout = UICollectionViewFlowLayout()
         headlinesCollectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: flowLayout)
         headlinesCollectionView.backgroundColor = UIColor(hex: 0xEFEFEF)
