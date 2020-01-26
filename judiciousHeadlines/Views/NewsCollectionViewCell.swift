@@ -42,6 +42,7 @@ class NewsCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .random(alpha: 1)
+        self.contentView.layer.cornerRadius = 10
         setupViews()
     }
     

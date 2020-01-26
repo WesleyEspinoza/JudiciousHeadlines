@@ -11,17 +11,20 @@ import UIKit
 class NewsFeedViewController: UIViewController{
     var coordinator: Coordinator!
     var headlinesCollectionView: UICollectionView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.title = "Headlines"
         setupViews()
+        
     }
     
     func setupViews(){
         let editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editButtonPressed))
+        let searchButton = UIBarButtonItem(image: UIImage(named: "searchIcon"), style: .plain, target: self, action: #selector(searchButtonPressed))
         self.navigationItem.leftBarButtonItems = [editButton]
+        self.navigationItem.rightBarButtonItems = [searchButton]
         let flowLayout = UICollectionViewFlowLayout()
         headlinesCollectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: flowLayout)
         headlinesCollectionView.backgroundColor = UIColor(hex: 0xEFEFEF)
@@ -34,6 +37,10 @@ class NewsFeedViewController: UIViewController{
     }
     
     @objc func editButtonPressed(){
+        
+    }
+    
+    @objc func searchButtonPressed(){
         
     }
 }
@@ -56,26 +63,33 @@ extension NewsFeedViewController: UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        var cell = UICollectionViewCell()
+        
         // NOTE: switch statment to return different cells at different indexs
+        var cell = UICollectionViewCell()
         switch indexPath.section {
         case 0:
+            var cell = FeaturedCollectionViewCell()
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeaturedCollectionViewCell.identifier, for: indexPath) as! FeaturedCollectionViewCell
-            break
+            cell.delegate = self
+            return cell
+            
         case 1:
+            var cell = ForYouCollectionViewCell()
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: ForYouCollectionViewCell.identifier, for: indexPath) as! ForYouCollectionViewCell
-            break
+            cell.delegate = self
+            return cell
+    
         default:
             cell = UICollectionViewCell()
         }
         return cell
     }
-
+    
 }
 
 extension NewsFeedViewController: UICollectionViewDelegateFlowLayout {
-
-
+    
+    
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {

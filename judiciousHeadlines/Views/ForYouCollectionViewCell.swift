@@ -14,6 +14,7 @@ import UIKit
 
 class ForYouCollectionViewCell: UICollectionViewCell{
     static let identifier = "ForYouCollectionViewCell"
+    var delegate: UIViewController!
     var headlines: [Headline] = [] {
         didSet{
             self.headlinesCollectionView.reloadData()
@@ -100,7 +101,6 @@ extension ForYouCollectionViewCell: UICollectionViewDataSource{
         
         cell = collectionView.dequeueReusableCell(withReuseIdentifier: NewsCollectionViewCell.identifier, for: indexPath) as! NewsCollectionViewCell
         //        cell.title = categories[indexPath.row]
-        cell.contentView.layer.cornerRadius = 10
         
         cell.source = headlines[indexPath.row].source?.name ?? "No Source"
         cell.title = headlines[indexPath.row].title ?? "No Tile"
@@ -116,7 +116,7 @@ extension ForYouCollectionViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.bounds.width , height: self.bounds.height / 1.9 )
+        return CGSize(width: self.bounds.width , height: self.bounds.height / 2 )
         
     }
     

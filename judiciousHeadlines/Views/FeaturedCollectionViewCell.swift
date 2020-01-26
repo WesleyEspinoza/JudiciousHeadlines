@@ -11,6 +11,8 @@ import UIKit
 
 class FeaturedCollectionViewCell: UICollectionViewCell{
     static let identifier = "FeaturedCollectionViewCell"
+    var delegate: UIViewController!
+    
     var headlines: [Headline] = [] {
         didSet{
             self.headlinesCollectionView.reloadData()
@@ -72,7 +74,17 @@ class FeaturedCollectionViewCell: UICollectionViewCell{
 
 extension FeaturedCollectionViewCell: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //        let selectedCell = collectionView.cellForItem(at: indexPath) as! CategoryCollectionViewCell
+        let detailVC = DetailViewController()
+        detailVC.titleString = headlines[indexPath.row].title
+        detailVC.descriptionString = headlines[indexPath.row].description
+        detailVC.authorString = headlines[indexPath.row].author
+        detailVC.sourceString = headlines[indexPath.row].source?.name
+        detailVC.contentImageURL = headlines[indexPath.row].urlToImage
+        detailVC.contentString = headlines[indexPath.row].content
+        detailVC.pusblishedString = headlines[indexPath.row].publishedAt
+        self.delegate.present(detailVC, animated: true, completion: nil)
+        
+        
         
         
     }
