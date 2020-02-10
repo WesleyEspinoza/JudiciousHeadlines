@@ -51,28 +51,9 @@ class NewsCollectionViewCell: UICollectionViewCell {
         contentImageView.translatesAutoresizingMaskIntoConstraints = false
         contentImageView.clipsToBounds = true
         contentImageView.sizeToFit()
+        print("uh")
         self.addSubview(contentImageView)
-        
-        NSLayoutConstraint.activate([
-            contentImageView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 0),
-            contentImageView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 0),
-            contentImageView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: 0),
-            contentImageView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -50)
-        ])
-        sourceLabel.lineBreakMode = .byWordWrapping
-        sourceLabel.numberOfLines = 3
-        sourceLabel.textAlignment = .left
-        sourceLabel.translatesAutoresizingMaskIntoConstraints = false
-        sourceLabel.font = UIFont(name: "Optima-ExtraBlack", size: 20)
-        contentImageView.addSubview(sourceLabel)
-        
-        NSLayoutConstraint.activate([
-            sourceLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 2),
-            sourceLabel.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 8),
-            sourceLabel.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -8)
-            
-        ])
-        
+//
         titleLabel.lineBreakMode = .byWordWrapping
         titleLabel.numberOfLines = 3
         titleLabel.textAlignment = .left
@@ -80,12 +61,32 @@ class NewsCollectionViewCell: UICollectionViewCell {
         titleLabel.font = UIFont(name: "Optima-ExtraBlack", size: 15)
         self.addSubview(titleLabel)
         
+        
+        sourceLabel.lineBreakMode = .byWordWrapping
+        sourceLabel.numberOfLines = 3
+        sourceLabel.textAlignment = .left
+        sourceLabel.translatesAutoresizingMaskIntoConstraints = false
+        sourceLabel.font = UIFont(name: "Optima-ExtraBlack", size: 20)
+        self.addSubview(sourceLabel)
+        
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: self.contentImageView.bottomAnchor, constant: -20),
-            titleLabel.leadingAnchor.constraint(equalTo: self.contentImageView.leadingAnchor, constant: 8),
-            titleLabel.trailingAnchor.constraint(equalTo: self.contentImageView.trailingAnchor, constant: -8)
+            sourceLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 2),
+            sourceLabel.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 8),
+            sourceLabel.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -8),
+            sourceLabel.heightAnchor.constraint(equalToConstant: 20),
             
+
+            titleLabel.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 8),
+             titleLabel.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -8),
+             titleLabel.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -8),
+
+             
+             contentImageView.topAnchor.constraint(equalTo: self.sourceLabel.bottomAnchor, constant: 0),
+             contentImageView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 0),
+             contentImageView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: 0),
+             contentImageView.heightAnchor.constraint(equalToConstant: 100)
         ])
+
         
     }
     

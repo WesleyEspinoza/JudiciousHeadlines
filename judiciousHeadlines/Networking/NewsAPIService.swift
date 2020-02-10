@@ -39,6 +39,7 @@ class NewsServiceAPI {
                 return
             }
             
+            
             let articles = try? JSONDecoder().decode(Article.self, from: data!)
             
             DispatchQueue.main.async {

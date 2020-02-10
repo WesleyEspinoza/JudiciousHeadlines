@@ -25,10 +25,11 @@ class ForYouCollectionViewCell: UICollectionViewCell{
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.preservesSuperviewLayoutMargins = false
+        self.layoutMargins = .zero
         self.backgroundColor = UIColor(hex: 0xEFEFEF)
         setupHeader()
         setupCollectionView()
-        self.layoutIfNeeded()
     }
     
     
@@ -40,7 +41,8 @@ class ForYouCollectionViewCell: UICollectionViewCell{
         
         NSLayoutConstraint.activate([
             header.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 8),
-            header.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 8)
+            header.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 8),
+            header.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -8)
             
         ])
         
@@ -105,6 +107,7 @@ extension ForYouCollectionViewCell: UICollectionViewDataSource{
         cell.source = headlines[indexPath.row].source?.name ?? "No Source"
         cell.title = headlines[indexPath.row].title ?? "No Tile"
         cell.imageURL = headlines[indexPath.row].urlToImage
+        cell.layer.cornerRadius = 10
         return cell
     }
     
@@ -116,7 +119,7 @@ extension ForYouCollectionViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.bounds.width , height: self.bounds.height / 2 )
+        return CGSize(width: self.bounds.width - 32 , height: self.bounds.height / 2 )
         
     }
     

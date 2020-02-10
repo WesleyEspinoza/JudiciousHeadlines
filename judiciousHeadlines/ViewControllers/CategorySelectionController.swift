@@ -14,7 +14,7 @@ class CategorySelectionController: UIViewController{
     let userdefaults = UserDefaults.standard
     var selectedCategories: [String] = []
     var headlinesCollectionView: UICollectionView!
-    let categories: [String] = ["Colleges and Universities", "Breaking News", "Current Events", "Environmental", "Government", "Magazines", "Media", "Sports", "Politics", "Religion-and-Spirituality", "Technology", "Start Ups", "Stocks", "Music", "EDM", "Hip-Hop", "R&B and Rap", "Pop Music", "Medicine", "World Affairs", "Economy", "contraversial", "Astrology", "Business",]
+    let categories: [String] = ["Colleges", "new", "Current", "Environmental", "Government", "Magazines", "Media", "Sports", "Politics", "Religion", "Technology", "Movies", "Stocks", "Music", "EDM", "Hip-Hop", "Rap","R&B", "Pop", "Medicine", "World", "Economy", "Contraversial", "Astrology", "Business",]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -128,7 +128,7 @@ extension CategorySelectionController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets.init(top: 8, left: 8, bottom: 8, right: 8)
+        return UIEdgeInsets.init(top: 8, left: 8, bottom: -26, right: -8)
     }
     
     func collectionView(_ collectionView: UICollectionView,
